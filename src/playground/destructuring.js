@@ -1,47 +1,45 @@
-// ARRAYS
+//
+// Object destructuring
+//
 
-const address = ['1299 S Juniper Street', 'Aliso', 'California', '92656']
+// const person = {
+//   name: 'Andrew',
+//   age: 27,
+//   location: {
+//     city: 'Philadelphia',
+//     temp: 88
+//   }
+// };
 
+// const { name: firstName = 'Anonymous', age } = person;
+// console.log(`${firstName} is ${age}.`);
 
-const [street, city, state, zip] = address;
+// const { city, temp: temperature } = person.location;
+// if (city && temperature) {
+//   console.log(`It's ${temperature} in ${city}.`);
+// }
 
-console.log(`You are in ${city} ${state}`)
+// const book = {
+//   title: 'Ego is the Enemy',
+//   author: 'Ryan Holiday',
+//   publisher: {
+//     // name: 'Penguin'
+//   }
+// };
 
-const item = ['Coffee(hot)', '$2.00', '$2.50', '$2.75'];
+// const { name: publisherName = 'Self-Published' } = book.publisher;
 
-const [coffee, , mediumCost] = item
+// console.log(publisherName); // Penguin, Self-Published
 
-console.log(`A medium ${coffee} cost ${mediumCost}`)
+//
+// Array destructuring
+//
 
-// OBJECTS
+// const address = ['1299 S Juniper Street', 'Philadelphia', 'Pennsylvania', '19147'];
+// const [, city, state = 'New York'] = address;
+// console.log(`You are in ${city} ${state}.`);
 
-const book = {
-  title: 'Ego is the Enemy',
-  author: 'Ryan Holiday',
-  publisher: {
-    name: 'Penguin'
-  }
-}
+const item = ['Coffee (iced)', '$3.00', '$3.50', '$3.75'];
+const [itemName, , mediumPrice] = item;
 
-const { name: publisherName = 'Self-Published' } = book.publisher
-console.log(`The publisher is ${publisherName}`);
-
-
-const person = {
-  name: 'Max',
-  age: 43,
-  location: {
-    city: 'Aliso',
-    temp: 92
-  }
-};
-/*
-const { name, age } = person;
-console.log(`${name} is ${age}.`);
-
-
-const { city, temp: tamp } = person.location;
-if (person.location.city && person.location.temp) {
-  console.log(`It's ${tamp} in ${city}`)
-}
- */
+console.log(`A medium ${itemName} costs ${mediumPrice}`);
