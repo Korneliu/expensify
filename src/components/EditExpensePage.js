@@ -10,11 +10,8 @@ const EditExpensePage = (props) => {
       <ExpenseForm
         expense={props.expense}
         onSubmit={(expense) => {
-          // Dispatch the action to edit the expense
           props.dispatch(editExpense(props.expense.id, expense))
-          // Redicrect to the dashboard page
-
-
+          props.history.push('/');
         }}
       />
       <button onClick={() => {
